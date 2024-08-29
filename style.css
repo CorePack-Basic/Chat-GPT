@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.container {
+    width: 330px;
+   
+    position: fixed;
+    top: 10px;
+    right: 35px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1) , 
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+                border-bottom-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+
+    transition: all .5s ease;
+    transform-origin: bottom right;
+   
+    opacity: 0;
+  
+}
+
+header {
+    background-color: #724ae8;
+    text-align: center;
+    padding: 6px 0;
+   border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.links {
+    overflow-y: auto;
+    height: 400px;
+    padding-bottom: 20px;
+}
+
+.links::-webkit-scrollbar {
+   width: 15px;
+
+}
+
+.links::-webkit-scrollbar-thumb {
+    background:linear-gradient(#642bff , #ff22e6);
+    border-radius: 10px;
+}
+.links::-webkit-scrollbar-track {
+    background-color: #d1e5ff;
+}
+
+
+.links .incoming {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding-top: 28px;
+    gap: 5px;
+}
+.incoming i {
+    background-color: #724ae8;
+    padding: 4px;
+    margin-top: 0px;
+    border-radius: 6px;
+}
+.incoming .text-income {
+    background-color: #ddd;
+    padding: 8px 20px 8px 10px;
+    border-radius: 8px;
+}
+.links .out-coming {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.links .out-coming p {
+    margin-top: 25px;
+    background-color: #724ae8;
+    padding: 10px 25px 10px 10px;
+    margin-right: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    color: white;
+}
+.chat-texture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid #eee;
+    
+}
+.chat-texture span {
+    margin-right: 30px;
+    color: rebeccapurple;
+    padding-top: 5px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.chat-texture textarea {
+    resize: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 20px 5px 0px 23px;
+    font-family: sans-serif;
+}
+
+.chat-texture textarea:valid ~ span {
+    visibility: visible;
+}
+.chat-toggler {
+    position: fixed;
+    bottom: 25px;
+    right: 54px;
+    transition: all 1s ease;
+}
+.chat-toggler span {
+    position: absolute;
+    font-size: 25px;
+    color: #642bff;
+    cursor: pointer;
+    transition: all .5s ease;
+    
+}
+.chat-toggler span:first-child {
+    left: -3px;
+}
+.show-chat .chat-toggler {
+    transition: all 1s ease;
+} 
+
+.show-chat button span:first-child {
+    transition: all 0.5 ease;
+    opacity: 0;
+    transform: rotate(90deg);
+}
+.show-chat button span:last-child {
+    transform: rotate(90deg);
+}
+
+
+.container.show {   
+    opacity: 1;
+    transform: scale(.9);
+
+}
